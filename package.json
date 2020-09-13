@@ -4,9 +4,9 @@
   "description": "A really simple webpage that alerts whenever your internet is down. Helpful when you are downloading a large file and want to be notified in case something is wrong.",
   "main": "src/index.html",
   "scripts": {
-    "start": "parcel index.html --open",
+    "start": "parcel src/index.html --open",
     "build": "parcel build src/index.html --out-dir docs --public-url ./",
-    "deploy": "npm run build && git add . && git add --all && git commit -m 'latest build' && git push origin master"
+    "deploy": "npm run build && git add --all && git commit -m 'latest build' && git push origin master"
   },
   "dependencies": {
     "axios": "0.20.0"

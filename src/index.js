@@ -1,25 +1,30 @@
-import "./styles.css";
-import axios from "axios";
+import './styles.css';
+import axios from 'axios';
 
-axios.defaults.headers.common["Cache-Control"] = "no-cache";
+axios.defaults.headers.common['Cache-Control'] = 'no-cache';
 
-const backUpAlert = new Audio("internet-back-online-alert.mp3");
-const downAlert = new Audio("internet-down-alert.mp3");
+let backUpAlert = document.getElementById('backUpAlertSound');
+let downAlert = document.getElementById('downAlertSound');
+let testSound = document.getElementById('testSound');
+
+let isInternetDown = null;
 
 const interval = setInterval(function () {
   axios
-    .get("https://reqres.in/api/users")
-    .then((response) => {
-      console.log("Your internet connection is working");
-      backUpAlert.play();
+    .get('https://reqres.in/api/users')
+    .then(() => {
+      if (isInternetDown) backUpAlert.play();
+      console.log('Your internet connection is working!');
+      isInternetDown = false;
     })
-    .catch((error) => {
-      downAlert.play();
-      console.error("Internet is down.");
+    .catch(() => {
+      if (!isInternetDown) downAlert.play();
+      console.error('Internet is down.');
+      isInternetDown = true;
     });
 }, 5000);
 
-const t = document.getElementsByTagName("button")[0];
-t.onclick = function () {
-  clearInterval(interval);
+const button = document.getElementsByTagName('button')[0];
+button.onclick = function () {
+  testSound.play();
 };
