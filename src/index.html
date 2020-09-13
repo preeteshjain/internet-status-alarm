@@ -29,7 +29,10 @@
       property="og:description"
       content="A really simple webpage that alerts whenever your internet is down. Helpful when you are downloading a large file and want to be notified in case something is wrong."
     />
-    <meta property="og:image" content="https://raw.githubusercontent.com/preeteshjain/internet-status-alarm/master/src/og-image.png" />
+    <meta
+      property="og:image"
+      content="https://raw.githubusercontent.com/preeteshjain/internet-status-alarm/master/src/og-image.png"
+    />
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
@@ -45,7 +48,10 @@
       property="twitter:description"
       content="A really simple webpage that alerts whenever your internet is down. Helpful when you are downloading a large file and want to be notified in case something is wrong."
     />
-    <meta property="twitter:image" content="https://raw.githubusercontent.com/preeteshjain/internet-status-alarm/master/src/og-image.png" />
+    <meta
+      property="twitter:image"
+      content="https://raw.githubusercontent.com/preeteshjain/internet-status-alarm/master/src/og-image.png"
+    />
 
     <link
       rel="stylesheet"
@@ -62,13 +68,16 @@
     </p>
     <h2>Why?</h2>
     <p>
-      Use this tool basically when you have to If you are downloading a very
-      large file and currently on an unstable internet connection, you might
-      want to be notified immediately once the internet is down so you can check
-      where's the problem, fix and resume the download immediately. This
-      basically saves you the frustration of coming back to your computer after
-      few hours or so, only to realize your internet went down during the
-      download.
+      Use this tool when you have to download a very large file but you are on
+      an unstable internet connection. You might want to be notified immediately
+      once the internet is down so you can check where's the problem, fix and
+      resume the download immediately. This basically saves you the frustration
+      of coming back to your computer after few hours or so, only to realize
+      your internet went down during the download.
+    </p>
+    <p>
+      You can also use the <a href="#logs">logs from this tool</a> to show your ISP that your
+      internet is not working properly.
     </p>
     <h2>How to use?</h2>
     <ol>
@@ -113,7 +122,7 @@
 
     <hr />
 
-    <h2>🟢 Live Logs</h2>
+    <h2 id="logs">🟢 Live Logs</h2>
     <div id="logsDiv"></div>
 
     <audio id="backUpAlertSound" src="./internet-back-online-alert.mp3"></audio>
