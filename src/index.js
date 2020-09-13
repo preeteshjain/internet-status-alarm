@@ -17,7 +17,12 @@ const interval = setInterval(function () {
       if (isInternetDown) backUpAlert.play();
       console.log('Your internet connection is working!');
       const timeNow = new Date();
-      logsDiv.innerHTML += `<p class="success-log">${timeNow.toLocaleString()}: Internet is up.</p>`;
+      logsDiv.innerHTML = `<p class="success-log animate" id="success-log">${timeNow.toLocaleString()}: Internet is up.</p>` + logsDiv.innerHTML;
+      let successLog = document.getElementById("success-log");
+      setInterval(() => {
+        successLog.classList.replace("success-log", "success-old-log")
+        successLog.classList.remove("animate")
+      }, 4000)
       isInternetDown = false;
     })
     .catch(() => {

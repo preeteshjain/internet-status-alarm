@@ -1999,7 +1999,12 @@ var interval = setInterval(function () {
     if (isInternetDown) backUpAlert.play();
     console.log('Your internet connection is working!');
     var timeNow = new Date();
-    logsDiv.innerHTML += "<p class=\"success-log\">".concat(timeNow.toLocaleString(), ": Internet is up.</p>");
+    logsDiv.innerHTML = "<p class=\"success-log animate\" id=\"success-log\">".concat(timeNow.toLocaleString(), ": Internet is up.</p>") + logsDiv.innerHTML;
+    var successLog = document.getElementById("success-log");
+    setInterval(function () {
+      successLog.classList.replace("success-log", "success-old-log");
+      successLog.classList.remove("animate");
+    }, 4000);
     isInternetDown = false;
   }).catch(function () {
     if (!isInternetDown) downAlert.play();
@@ -2041,7 +2046,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58713" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60037" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
