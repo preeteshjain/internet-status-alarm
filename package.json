@@ -4,7 +4,7 @@
   "description": "A really simple webpage that alerts whenever your internet is down. Helpful when you are downloading a large file and want to be notified in case something is wrong.",
   "main": "src/index.html",
   "scripts": {
-    "start": "parcel src/index.html --open",
+    "start": "parcel src/index.html --out-dir docs --open",
     "build": "parcel build src/index.html --out-dir docs --public-url ./",
     "deploy": "npm run build && git add --all && git commit -m \"latest build\" && git push origin master",
     "push": "git add --all && git commit -m \"latest build\" && git push origin master"
