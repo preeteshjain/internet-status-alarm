@@ -6,7 +6,7 @@
   "scripts": {
     "start": "parcel src/index.html --open",
     "build": "parcel build src/index.html --out-dir docs --public-url ./",
-    "deploy": "npm run build && git add --all && git commit -m 'latest build' && git push origin master",
+    "deploy": "npm run build && git add --all && git commit -m \"latest build\" && git push origin master",
     "push": "git add --all && git commit -m \"latest build\" && git push origin master"
   },
   "dependencies": {

@@ -1992,15 +1992,19 @@ _axios.default.defaults.headers.common['Cache-Control'] = 'no-cache';
 var backUpAlert = document.getElementById('backUpAlertSound');
 var downAlert = document.getElementById('downAlertSound');
 var testSound = document.getElementById('testSound');
+var logsDiv = document.getElementById('logsDiv');
 var isInternetDown = null;
 var interval = setInterval(function () {
   _axios.default.get('https://reqres.in/api/users').then(function () {
     if (isInternetDown) backUpAlert.play();
     console.log('Your internet connection is working!');
+    var timeNow = new Date();
+    logsDiv.innerHTML += "<p class=\"success-log\">".concat(timeNow.toLocaleString(), ": Internet is up.</p>");
     isInternetDown = false;
   }).catch(function () {
     if (!isInternetDown) downAlert.play();
     console.error('Internet is down.');
+    logsDiv.innerHTML += "<p class=\"error-log\">".concat(timeNow.toLocaleString(), ": Internet is down.</p>");
     isInternetDown = true;
   });
 }, 5000);
@@ -2037,7 +2041,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51661" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53210" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
