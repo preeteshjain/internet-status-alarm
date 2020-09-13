@@ -28,6 +28,7 @@ const interval = setInterval(function () {
     .catch(() => {
       if (!isInternetDown) downAlert.play();
       console.error('Internet is down.');
+      const timeNow = new Date();
       logsDiv.innerHTML +=
         `<p class="error-log">${timeNow.toLocaleString()}: Internet is down.</p>`;
       isInternetDown = true;
