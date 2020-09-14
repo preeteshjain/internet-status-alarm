@@ -2009,6 +2009,7 @@ var interval = setInterval(function () {
   }).catch(function () {
     if (!isInternetDown) downAlert.play();
     console.error('Internet is down.');
+    var timeNow = new Date();
     logsDiv.innerHTML += "<p class=\"error-log\">".concat(timeNow.toLocaleString(), ": Internet is down.</p>");
     isInternetDown = true;
   });
@@ -2046,7 +2047,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60037" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63700" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
